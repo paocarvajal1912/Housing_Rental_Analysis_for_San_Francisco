@@ -13,13 +13,15 @@ We uses Maobox API integration wit Plotly Express Library to be able to have vis
 
 
 ## Instalation Guide
-The file is a jupyter notebook. If you don't have jupyter lab, you can install it following the instruction here:
+The file is a jupyter notebook. If you don't have jupyter notebook, you can install it following the instruction here:
 
 https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html
 
+You need to have installed PyViz, with some specific version of Plotly and NodeJS. The version we use for Plotly is 4.13.0; for hvPlot, 0.7.0 or later; and for NodeJS, version 12 or later. Additionally, you need a specific version of Jupyter Lab (2), as well as Jupyter Lab extensions for PyViz and Plotly Express.
 
-If you don't have installed a PyViz ecosystem, you may want to execute the following installations packages from conda, together with the Jupyter Lab dependencies:
+If you don't have installed a PyViz ecosystem, you may want to execute the following installations packages from conda, together with the Jupyter Lab dependencies. The version used for Python is 3.7:
 
+```
 conda install -c plotly plotly=4.13.
 conda install -c pyviz hvplot
 conda install -c conda-forge nodejs=12
@@ -28,8 +30,33 @@ jupyter labextension install jupyterlab-plotly@4.13.0 --no-build
 jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.13.0 --no-build
 jupyter labextension install @pyviz/jupyterlab_pyviz --no-build
 jupyter lab build
+```
 
-To be able to generate visualizations, you need to have a .env file with proper API access token for Mapbox API. For this purpose you may need to create an account here: https://account.mapbox.com/
+To be able to generate visualizations, you need to have a `.env` file with proper API access token for Mapbox API on the same directory than the notebook. For this purpose you may need to create an account here: https://account.mapbox.com/. You can use the `sample.env` file as a base. You just fill your correcponding MAPBOX_API_ACCESS_TOKEN in the space marked in that sample file, and save the file as `.env`. Notice that the file will became invisible, but will still be there, and it will be accessed by the application.
+
+
+In case you have issues with your installations, you can try creating a new environment with the necesary tools, with the following installation :
+
+```
+conda deactivate
+conda install ipykernel -y
+conda create -n pyvizenv python=3.7 -y
+conda activate pyvizenv
+conda install -c conda-forge jupyterlab=2 -y
+conda install -c plotly plotly=4.13. -y
+conda install -c pyviz hvplot -y
+conda install -c conda-forge nodejs=12 -y
+conda install streamz -y
+pip install python-dotenv decorator==4.3 networkx
+conda install nb_conda_kernels ipykernel -y
+jupyter labextension install jupyterlab-plotly@4.13.0 --no-build
+jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.13.0 --no-build
+jupyter labextension install @pyviz/jupyterlab_pyviz --no-build
+conda list plotly
+conda list hvplot
+conda list nodejs
+```
+
 
 ### Usage
 
@@ -40,14 +67,13 @@ https://www.dataquest.io/blog/jupyter-notebook-tutorial/
 
 Some of the visualizations have some interactions available.
 
-1. The visualization for the "Average Price per Square Foot, and Gross Rent in San Francisco's Neighborhoods" has a dropdown that you can use to select a particular neirborhood. For example, below "Anza Vista" neirborhood is chosen.
+> The visualization for the "Average Price per Square Foot, and Gross Rent in San Francisco's Neighborhoods" has a dropdown at the right that you can use to select a particular neirborhood. For example, below "Anza Vista" neirborhood is chosen.
 
-![Figure]("/Images/pc_dropdown_for_neirborhood.jpg")
+![Plot Featuring Dropdown Feature in Visualization](Images/pc_dropdown_for_neirborhood.png)
 
-Also, in the Average Gross Monthly Rent and Sell Price per Square Foot in San Francisco" as below, you can see in each neirborhood the monthly gross rent and the sale price of every neirborhood by scrolling with the mouse over it. As the rent became pricer, the color became darker, and as the price per square foot became larger, the size of the circle beacme larger as well.
+ > Also, in the "Average Gross Monthly Rent and Sell Price per Square Foot in San Francisco" (screenshot below), you can see in each neirborhood the monthly gross rent and the sale price of every neirborhood by scrolling with the mouse over. As the price per square foot became larger, the size of the circle became larger; as the average rent became pricer, the color became darker. You can explore additional functionalities on the tools on the right top of the map for zoom, selections, savings, and more.
 
-![Figure]("/Images/InteractiveSFMap.jpg")
-
+![Figure](Images/InteractiveSFMap.png "Figure: Interactive SF Map")
 
 
 
