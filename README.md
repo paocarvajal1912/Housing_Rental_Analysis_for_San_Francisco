@@ -9,7 +9,7 @@ For the analysis we use a jupyter notebook, on python, in a PyViz environment ec
 OS, Pandas, Pathlib, and Dotenv for the general calculations and access/management of data.
 Plotly Express, Hvplot, and Dash for visualizations.
 
-We uses Maobox API integration wit Plotly Express Library to be able to have visualizataions of geographically based data.
+We uses Mapbox API integration wit Plotly Express Library to be able to have visualizations of geographically based data.
 
 
 ## Instalation Guide
@@ -32,7 +32,7 @@ jupyter labextension install @pyviz/jupyterlab_pyviz --no-build
 jupyter lab build
 ```
 
-To be able to generate visualizations, you need to have a `.env` file with proper API access token for Mapbox API on the same directory than the notebook. For this purpose you may need to create an account here: https://account.mapbox.com/. You can use the `sample.env` file as a base. You just fill your correcponding MAPBOX_API_ACCESS_TOKEN in the space marked in that sample file, and save the file as `.env`. Notice that the file will became invisible, but will still be there, and it will be accessed by the application.
+To be able to generate visualizations, you need to have a `.env` file with proper API access token for Mapbox API on the same directory than the notebook. For this purpose you may need to create an account here: https://account.mapbox.com/. You can use the `sample.env` file as a base. You just fill your corresponding MAPBOX_API_ACCESS_TOKEN in the space marked in that sample file, and save the file as `.env`. Notice that the file will became invisible, but will still be there, and it will be accessed by the application.
 
 
 In case you have issues with your installations, you can try creating a new environment with the necesary tools, with the following installation :
