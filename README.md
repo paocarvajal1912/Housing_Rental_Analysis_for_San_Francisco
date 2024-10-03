@@ -1,4 +1,4 @@
-# Housing_Rental_Analysis_for_San_Francisco
+# Housing Rental Analysis for San Francisco, CA
 
 This project evaluates the housing market in San Francisco to offer an instant, one-click service for people to buy properties and then rent them. 
 We use data visualization, including aggregation, interactive visualizations, and geospatial analysis, to assess properties in the San Francisco market as viable investment opportunities for this business.
@@ -80,7 +80,7 @@ Some of the visualizations have some interactions available.
 ## Contributors
 This project was coded by Paola Carvajal Almeida, paola.antonieta@gmail.com.
 
-Contact email: paola.antonieta@gmail.com
+Contact email: paola.carvajal@simon.rochester.edu
 LinkedIn profile: https://www.linkedin.com/in/paolacarvajal/
 
 
